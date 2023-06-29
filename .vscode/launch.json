@@ -1,0 +1,138 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "ShellMain",
+            "request": "launch",
+            "mainClass": "org.corfudb.shell.ShellMain",
+            "projectName": "cmdlets"
+        },
+        {
+            "type": "java",
+            "name": "CorfuStoreBrowserEditorMain",
+            "request": "launch",
+            "mainClass": "org.corfudb.browser.CorfuStoreBrowserEditorMain",
+            "projectName": "corfudb-tools"
+        },
+        {
+            "type": "java",
+            "name": "CompactorCheckpointer",
+            "request": "launch",
+            "mainClass": "org.corfudb.compactor.CompactorCheckpointer",
+            "projectName": "corfudb-tools"
+        },
+        {
+            "type": "java",
+            "name": "CompactorController",
+            "request": "launch",
+            "mainClass": "org.corfudb.compactor.CompactorController",
+            "projectName": "corfudb-tools"
+        },
+        {
+            "type": "java",
+            "name": "Generator",
+            "request": "launch",
+            "mainClass": "org.corfudb.generator.Generator",
+            "projectName": "generator"
+        },
+        {
+            "type": "java",
+            "name": "LongevityRun",
+            "request": "launch",
+            "mainClass": "org.corfudb.generator.LongevityRun",
+            "projectName": "generator"
+        },
+        {
+            "type": "java",
+            "name": "CorfuServer",
+            "request": "launch",
+            "mainClass": "org.corfudb.infrastructure.CorfuServer",
+            "projectName": "infrastructure",
+            "args": "-ms 9000 --rdma-host=10.0.2.2 --rdma-port=8000",
+            "env": {
+                "LD_LIBRARY_PATH": "/usr/local/lib"
+            }
+        },
+        {
+            "type": "java",
+            "name": "CorfuInterClusterReplicationServer",
+            "request": "launch",
+            "mainClass": "org.corfudb.infrastructure.logreplication.infrastructure.CorfuInterClusterReplicationServer",
+            "projectName": "infrastructure"
+        },
+        {
+            "type": "java",
+            "name": "BatchedWriteTransaction",
+            "request": "launch",
+            "mainClass": "org.corfudb.samples.BatchedWriteTransaction",
+            "projectName": "samples"
+        },
+        {
+            "type": "java",
+            "name": "CorfuStoreSample",
+            "request": "launch",
+            "mainClass": "org.corfudb.samples.CorfuStoreSample",
+            "projectName": "samples"
+        },
+        {
+            "type": "java",
+            "name": "HelloCorfu",
+            "request": "launch",
+            "mainClass": "org.corfudb.samples.HelloCorfu",
+            "projectName": "samples",
+            "args": "-c localhost:9000",
+            "env": {
+                "LD_LIBRARY_PATH": "/usr/local/lib"
+            }
+        },
+        {
+            "type": "java",
+            "name": "SimpleAtomicTransaction",
+            "request": "launch",
+            "mainClass": "org.corfudb.samples.SimpleAtomicTransaction",
+            "projectName": "samples"
+        },
+        {
+            "type": "java",
+            "name": "SimpleUseCustomBaseCorfuObject",
+            "request": "launch",
+            "mainClass": "org.corfudb.samples.SimpleUseCustomBaseCorfuObject",
+            "projectName": "samples"
+        },
+        {
+            "type": "java",
+            "name": "WriteOnlySimpleTransaction",
+            "request": "launch",
+            "mainClass": "org.corfudb.samples.WriteOnlySimpleTransaction",
+            "projectName": "samples"
+        },
+        {
+            "type": "java",
+            "name": "WriteWriteTXs",
+            "request": "launch",
+            "mainClass": "org.corfudb.samples.WriteWriteTXs",
+            "projectName": "samples",
+            "args": "-c localhost:9000",
+            "env": {
+                "LD_LIBRARY_PATH": "/usr/local/lib"
+            }
+        },
+        {
+            "type": "java",
+            "name": "LogReplicationTest",
+            "request": "launch",
+            "mainClass": "org.corfudb.infrastructure.logreplication.LogReplicationTest",
+            "projectName": "test"
+        }
+    ]
+}

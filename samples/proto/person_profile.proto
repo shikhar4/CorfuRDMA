@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package samples.protobuf;
+option java_package = "samples.protobuf";
+
+import "corfu_options.proto";
+import "work_experience.proto";
+
+message Name {
+    string first_name = 1;
+    option (org.corfudb.runtime.table_schema).secondary_key = { index_path: "first_name"};
+    string last_name = 2;
+    option (org.corfudb.runtime.table_schema).secondary_key = { index_path: "last_name"};
+}
+
+message Person {
+    Name name = 1;
+    option (org.corfudb.runtime.table_schema).secondary_key = { index_path: "name"};
+    int32 age = 2;
+    samples.protobuf.Experience exp = 3;
+}

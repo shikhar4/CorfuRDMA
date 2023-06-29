@@ -1,0 +1,69 @@
+CorfuStore Browser Editor Tool
+
+The Browser and Editor tools are used for inspecting and troubleshooting data
+inside Corfu.
+
+The tool is schemaless, i.e., it does not need to be packaged with protobuf
+definitions or proto files to serialize/deserialize the data.
+
+--------
+Browser
+--------
+The browser allows to visualize/inspect corfu tables and metadata by reading
+entries in a given table and namespace, list tables in a given namespace, list
+stream tags for a table, display all known stream tags, etc.
+
+1. showTable to read and output all entries in a given table and namespace.
+It can be invoked like the below example-
+java -cp "/path/to/corfudb-tools-0.4.0-SNAPSHOT-shaded.jar"
+org.corfudb.browser.CorfuStoreBrowserMain
+--host=10.160.29.112
+--port=9000
+--operation=showTable
+--namespace=sample_namespace
+--tablename=sample_tablename
+--tlsEnabled=true
+--keystore=<path to keystore file>
+--ks_password=<path to keystore password file>
+--truststore=<path to truststore file>
+--truststore_password=<path to truststore password file>
+
+2. listTables to list all table names in a given namespace(all namespaces if the
+namespace param is null)-
+java -cp "corfudb-tools-0.4.0-SNAPSHOT-shaded.jar" --Dlogback.configurationFile=logback.prod.xml
+org.corfudb.browser.CorfuBrowserMain
+--host=10.160.29.112
+--port=9000
+--operation=listTables
+--namespace=sample_namespace
+--tlsEnabled=true
+--keystore=<path to keystore file>
+--ks_password=<path to keystore password file>
+--truststore=<path to truststore file>
+--truststore_password=<path to truststore password file>
+
+Keystore and truststore parameters are not required if tls is disabled.
+
+For usage help,
+java -cp "corfudb-tools-0.4.0-SNAPSHOT-shaded.jar" org.corfudb.browser.CorfuStoreBrowserMain <--help|-h>
+
+
+-------
+Editor
+-------
+editTable to edit the value associated with a key in a given table and
+namespace-
+java -cp "corfudb-tools-0.4.0-SNAPSHOT-shaded.jar" --Dlogback.configurationFile=logback.prod.xml
+org.corfudb.browser.CorfuBrowserMain
+--host=10.160.29.112
+--port=9000
+--operation=editTable
+--namespace=sample_namespace
+--tablename=sample_tablename
+--keyToEdit=<json string representing the key to edit>
+--newRecord=<json string representing the new value>
+--tlsEnabled=true
+--keystore=<path to keystore file>
+--ks_password=<path to keystore password file>
+--truststore=<path to truststore file>
+--truststore_password=<path to truststore password file>

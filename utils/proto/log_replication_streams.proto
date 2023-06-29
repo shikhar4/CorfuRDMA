@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package org.corfudb.utils;
+option java_package = "org.corfudb.utils";
+
+message TableInfo {
+    string name = 1;
+}
+
+message Namespace {
+    string name = 1;
+}
+
+message VersionString {
+    string name = 1;
+}
+
+message Version {
+    string version = 1;
+    // A boolean flag which indicates the cluster has been
+    // upgraded and a forced snapshot sync is needed.
+    bool is_upgraded = 2;
+}
