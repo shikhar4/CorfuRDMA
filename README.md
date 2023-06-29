@@ -1,5 +1,7 @@
 # CorfuRDMA
 
+To read more about the implementation, check out the CS598_FTS_Paper.pdf
+
 ## Setup
 
 1. Build DiSNI according to [DiSNI README](disni/README.md).
